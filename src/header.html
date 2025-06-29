@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link href="./output.css" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        }
+    
+        function closeMenu() {
+            document.getElementById("mobile-menu").classList.add("hidden");
+        }
+    </script>
+</head>
+<body class="flex flex-col w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
+    <header class="w-full px-5 py-3 shadow-md bg-white dark:bg-gray-800">
+        <div class="flex justify-between items-center">
+            <!-- Left Side: Logo -->
+            <div id="logo" class="flex flex-row gap-1 font-serif text-sm md:text-xl font-bold">
+                <img class="h-8 w-8 motion-preset-pulse motion-duration-1500" src="./img/myemoji.png" alt="logo">
+                <span class="text-black dark:text-white py-2 md:py-1">M.P</span>
+                <span class="text-purple-600 py-2 md:py-1"> Michael Paul</span>
+            </div>
+
+            <!-- Right Side: Navigation (Desktop) -->
+            <nav class="hidden md:flex gap-5 font-serif text-xs md:text-lg text-black dark:text-white">
+                <a href="#home" id="home" class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Home</a>
+                <a href="#about" class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">About Me</a>
+                <a href="#projects" class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Projects</a>
+                <a href="#contact" class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md scroll-smooth">Contact Me</a>
+            </nav>
+
+            <!-- Hamburger Button (Mobile Only) -->
+             <button class="md:hidden text-black dark:text-white focus:outline-none" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            
+            <!-- Mobile Dropdown Menu (Hidden by Default) -->
+             <nav id="mobile-menu" class="hidden md:hidden flex flex-col gap-3 font-serif text-xs md:text-lg text-black dark:text-white bg-white dark:bg-gray-800 w-full p-4 shadow-md rounded-md absolute top-20 left-0">
+                <a href="#home" class="block px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" onclick="closeMenu()">Home</a>
+                <a href="#about" class="block px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" onclick="closeMenu()">About Me</a>
+                <a href="#projects" class="block px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" onclick="closeMenu()">Projects</a>
+                <a href="#contact" class="block px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md scroll-smooth" onclick="closeMenu()">Contact Me</a>
+                <a href="#skills" class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" onclick="closeMenu()">Skills</a>
+            </nav>
+    </header>
+</body>
+</html>
