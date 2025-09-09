@@ -2,8 +2,8 @@
 error_reporting(0);
 
 //Telegram bot token & chat id
-$token = '1628978126:AAEWVJZiYvea6uSpIZt9UOKhlmMsAUH34HM';
-$chat_id = '1322044003';
+$token = '';
+$chat_id = '';
  
   /**
  * @param $user_agent null
